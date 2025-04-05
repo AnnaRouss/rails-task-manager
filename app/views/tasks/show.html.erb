@@ -1,0 +1,7 @@
+<h1><%= @task.title %></h1>
+
+<p><strong>Details:</strong> <%= @task.details %></p>
+
+<p><strong>Status:</strong> <%= @task.completed ? "Completed ✅" : "Not completed ❌" %></p>
+
+<%= link_to "Task List", tasks_path %>
