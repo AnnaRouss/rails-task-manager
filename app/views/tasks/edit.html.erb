@@ -1,0 +1,17 @@
+<%= form_with model: @task do |f| %>
+  <div>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :details %><br>
+    <%= f.text_field :details %>
+  </div>
+  <div>
+  <%= f.label :completed %>
+  <%= f.check_box :completed, default: false %>
+  </div>
+    <%= f.submit "Create Task" %>
+<% end %>
+<hr>
+<i class="fa-solid fa-list-check"></i><%= link_to "Back to tasks", tasks_path %>

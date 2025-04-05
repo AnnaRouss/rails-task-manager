@@ -1,7 +1,13 @@
-<h1><%= @task.title %></h1>
-
-<p><strong>Details:</strong> <%= @task.details %></p>
-
-<p><strong>Status:</strong> <%= @task.completed ? "Completed ✅" : "Not completed ❌" %></p>
-
-<%= link_to "Task List", tasks_path %>
+<h2><%= @task.title %></h2>
+<hr>
+<p><%= @task.details %></p>
+<p>
+  <% if @task.completed %>
+    <%= "The task is complete" %>
+  <% else %>
+    <%= "The task is not complete" %>
+  <% end %>
+</p>
+<hr>
+<i class="fa-solid fa-user-pen"></i><%= link_to "Edit a task", edit_task_path(@task) %><br>
+<i class="fa-solid fa-list-check"></i><%= link_to "Task List", tasks_path %>
